@@ -104,7 +104,7 @@ class FtpDirectoryIterator {
 					if (!isset($ftpFiles[$ftpDir . '/' . $filename]) || $localFileMtime > $ftpFiles[$ftpDir . '/' . $filename]) {
 
                         if (ftp_put($this->ftpConnection, $ftpDir . '/' . $filename , $localFileName, FTP_ASCII)) {
-                            if ($this->debug) {
+                            if ($debug) {
                                 echo $filename . " trasferito correttamente<br>";
                             }
                             $this->_filesRegister[] = $filename;
